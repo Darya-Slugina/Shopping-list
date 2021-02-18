@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+  <title>toDoList</title>
+</head>
+
+<body>
+  <div class="main">
+    <h1>SHOPPING LIST</h1>
+    <form>
+      <input type="text" placeholder="new item" name="item">
+      <button type="submit"><strong>ADD</strong></button>
+    </form>
+    <div class="tasksBoard">
+      <div id="container">
+        <script src="./node_modules/handlebars/dist/handlebars.js"></script>
+      </div>
+      <a id="clear">Clear</a>
+    </div>
+  </div>
+  <script id="notes" type="text/x-handlebars-template">
+          <ul>
+            {{#each notes}}
+              <li>
+                <span class="delete">×</span>
+                <label class={{class}}>{{note}}</label>
+              </li>  
+            {{/each}}
+          </ul>
+  </script>
+
+  <script src="ListController.js"></script>
+  <script src="ListModel.js"></script>
+  <script src="UserController.js"></script>
+
+
+
+</body>
+
+</html>
