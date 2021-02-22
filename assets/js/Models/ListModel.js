@@ -19,8 +19,7 @@ const listStorage = (function () {
             listJson = localStorage.getItem("notes");
 
             if (
-                listJson !== ''
-                && listJson !== undefined                
+                listJson !== null              
                 && (JSON.parse(listJson)).notes.length > 0
             ) {
                 list = JSON.parse(listJson);
