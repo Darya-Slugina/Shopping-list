@@ -1,4 +1,5 @@
 (function () {
+
     listController();
 
     document.querySelector('form').addEventListener('submit', submit);
@@ -37,7 +38,20 @@
     function crossTask(e) {
         let element = e.target;
         element.classList.toggle("mystyle");
-        listStorage.crossNote(e.target.textContent);
+        crossNote(e.target.textContent);
+    }
+
+    function crossNote(text) {
+        list.notes.forEach(function (el) {
+            if (el.note === text) {
+                if (el.class == 'mystyle') {
+                    el.class = '';
+                } else {
+                    el.class = 'mystyle';
+                }
+            }
+        });
+        listStorage.update(list);
     }
     
 })();

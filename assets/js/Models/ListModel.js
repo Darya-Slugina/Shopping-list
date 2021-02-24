@@ -54,19 +54,6 @@ const listStorage = (function () {
             localStorage.setItem("notes", listJson);
             listController();
         }
-
-        crossNote(text) {
-            list.notes.forEach(function (el) {
-                if (el.note === text) {
-                    if (el.class == 'mystyle') {
-                        el.class = '';
-                    } else {
-                        el.class = 'mystyle';
-                    }
-                }
-            });
-            this.update(list);
-        }
     }
 
     return new ListStorage();
